@@ -1,4 +1,4 @@
-(defproject org.clojars.clojure-first-class-objects/firstclassobjects "0.0.1"
+(defproject org.clojars.clojure-first-class-objects/firstclassobjects "0.0.2"
   :description "A pilot project to use Clojure for introductory computer science courses at the University of Minnesota - Morris"
   :url "https://github.com/Clojure-Intro-Course/Clojure-FirstClassObjects.git"
   :license {:name "Eclipse Public License - v 1.0"
