@@ -804,4 +804,4 @@
   [shape angle]
   {:pre [(not (assert (:boolean (check-if-not-nil? [shape angle]))
                       (str "rotate-shape expects a number but got nil as its "(ordinalize (:arg-num (check-if-not-nil? [shape angle])))" argument")))]}
-  (map #(assoc % :angle angle) shape))
+  (assoc shape :angle angle))
