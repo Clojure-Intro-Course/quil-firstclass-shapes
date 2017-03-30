@@ -1,0 +1,100 @@
+
+
+**(create-ellipse)**
+
+![Image of arc](examplePictures/arcBlue.PNG)
+
+
+1. (create-ellipse 20 40 :red)
+
+   ![](examplePictures/ellipseRed.PNG)
+
+2. (create-ellipse 60 40 :green)
+
+   ![](examplePictures/ellipseGreen.PNG)
+
+3. (create-ellipse 0 30 :black)
+
+   ![](examplePictures/ellipseBlack.PNG)
+
+4. (create-ellipse -40 30 :yellow)
+
+   ![](examplePictures/ellipseYellow.PNG)
+
+5. (create-ellipse :blue 20 90)
+
+    => Throws ClassCastException
+
+6. (create-ellipse “20” 30 :purple)
+
+    => Throws ClassCastException
+
+7. (create-ellipse 30 20 :cat)
+
+    => RuntimeException, “The keyword :cat is not a valid color” printed out
+
+8. (create-ellipse 40 50 “bear”)
+
+    => RuntimeException, “Unable to resolve symbol: bear in this context” not printed out
+
+9. (create-ellipse 100 90)
+
+   ![](examplePictures/ellipseEmpty.PNG)
+
+10. (create-ellipse 20 :red)
+
+	=> Throws ClassCastException
+
+11. (create-ellipse 20)
+
+	=> Throws NullPointerException
+
+12. (create-ellipse :blue)
+
+    => Throws NullPointerException
+
+13. (above (create-ellipse 20 30 :red) (create-ellipse 100 10 :blue))
+
+
+**(create-arc) is wonky and hopefully I'll have it fixed soon**
+
+
+**(create-line)**
+
+1. (create-line 120 120 10 :green) \[same as (create-line -120 -120 10 :green), essentially\]
+
+   ![](examplePictures/lineGreen.PNG)
+
+2. (create-line 30 100 100 :orange)
+
+   ![](examplePictures/lineOrange.PNG)
+
+3. (create-line -110 100 20 :yellow)
+
+   ![](examplePictures/lineYellow.PNG)
+
+4. (create-line -100 -100 0 :blue)
+
+   ![](examplePictures/lineBlue.PNG)
+
+**(create-triangle)**
+
+1. (create-triangle 100 100 50 0 :purple)
+
+   ![](examplePictures/trianglePurple.PNG)
+
+2. (create-triangle 100 100 0 0 :black)
+
+   ![](examplePictures/triangleBlack.PNG)
+
+3. (create-triangle 100 100 -100 0 :red)
+
+   ![](examplePictures/triangleRed.PNG)
+
+4. (create-triangle 0 0 0 0 :orange)
+
+	=>Blank image shows up
+
+5. (create-triangle 10 50 10 50 :orange)
+
+   ![](examplePictures/triangleOrange.PNG)
