@@ -55,6 +55,8 @@
 
 13. (above (create-ellipse 20 30 :red) (create-ellipse 100 10 :blue))
 
+    ![](examplePictures/aboveArcRedBlue.PNG)
+
 
 **(create-arc) is wonky and hopefully I'll have it fixed soon**
 
