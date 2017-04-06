@@ -179,7 +179,9 @@
            (no-fill))
          (with-translation [x y]
            (with-rotation [(/ (* PI angle) 180)]
-             (f-arc 0 0 wid hei start stop :pie)))
+           (if (< start stop)
+             (f-arc 0 0 wid hei (/ (* start PI) 180) (/ (* stop PI) 180) :pie)
+             (f-arc 0 0 wid hei (/ (* stop PI) 180) (/ (* start PI) 180) :pie))))
          (no-fill))})
 
 
