@@ -44,7 +44,7 @@
 
 
 (defn f-background
-  "Takes in one through four RBG values (look at quil's fill function for exact RGB parameters) and sets the background of the drawn screen to that."
+  "Takes in one through four RGB values (look at quil's fill function for exact RGB parameters) and sets the background of the drawn screen to that."
   [& args]
   (if (< 4 (count args))
     (throw (Exception. "f-background expects either 1, 2, 3, or 4 arguments.")))
@@ -137,7 +137,7 @@
 ;------------------------------------------------------------------------------------------------------------------------------*** SHAPE FUNCTIONS ***
 
 (defn create-ellipse
-  "Takes in width, height, and one through four RBG values (look at quil's fill function for exact RGB parameters).
+  "Takes in width, height, and one through four RGB values (look at quil's fill function for exact RGB parameters).
   Creates a hashmap of the information relevant to the shape and its draw position and values needed by the ds function."
   [w h & colors]
   {:pre [(not (assert (:boolean (check-if-not-nil? [w h]))
@@ -160,7 +160,7 @@
 
 
 (defn create-arc
-  "Takes in a width, height, starting angle, ending angle, and one through four RBG values (look at quil's fill function for exact RGB parameters).
+  "Takes in a width, height, starting angle, ending angle, and one through four RGB values (look at quil's fill function for exact RGB parameters).
   The start and stop angles are measured in degrees, with 0 or 360 being 3 o'clock.
   Creates a hashmap of the information relevant to the shape and its draw position and the values needed by the ds function."
   [w h start stop & colors]
@@ -184,7 +184,7 @@
 
 
 (defn create-line
-  "Takes in one x and y position, a stroke weight, and one through four RBG values (look at quil's fill function for exact RGB parameters).
+  "Takes in one x and y position, a stroke weight, and one through four RGB values (look at quil's fill function for exact RGB parameters).
   The first position is automatically (0,0) and the line is drawn to the specified (x,y).
   Creates a hashmap of the information relevant to the shape and its draw position and the values needed by the ds function."
   [x2 y2 stroke & colors]
@@ -210,7 +210,7 @@
 
 
 (defn create-triangle
-  "Takes in two x and y positions and one through four RBG values (look at quil's fill function for exact RGB parameters).
+  "Takes in two x and y positions and one through four RGB values (look at quil's fill function for exact RGB parameters).
   The position of the first vertex is automatically (0,0) so the triangle will be drawn based off that point.
   Creates a hashmap of the information relevant to the shape and its draw position and the values needed by the ds function."
   [x2 y2 x3 y3 & colors]
@@ -238,7 +238,7 @@
 
 
 (defn create-quad
-  "Takes in three pairs x and y positions, ordered x1 y1 x2 y2 x3 y3, and one through four RBG values (look at quil's fill function for exact RGB parameters).
+  "Takes in three pairs x and y positions, ordered x1 y1 x2 y2 x3 y3, and one through four RGB values (look at quil's fill function for exact RGB parameters).
   The position of the first vertex is automatically (0,0) so the quad will be drawn based on that point.
   Creates a hashmap of the information relevant to the shape and its draw position and the values needed by the ds function."
   [x2 y2 x3 y3 x4 y4 & colors]
@@ -287,7 +287,7 @@
 
 
 (defn create-rect
-  "Takes in width, height, and one through four RBG values (look at quil's fill function for exact RGB parameters).
+  "Takes in width, height, and one through four RGB values (look at quil's fill function for exact RGB parameters).
   Creates a hashmap of the information relevant to the shape and its draw position and values needed by the ds function."
   [w h & colors]
   {:pre [(not (assert (:boolean (check-if-not-nil? [w h]))
