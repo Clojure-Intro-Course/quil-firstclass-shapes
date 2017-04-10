@@ -23,19 +23,19 @@
 
 5. (create-ellipse :blue 20 90)
 
-    => Throws ClassCastException
+        => Throws ClassCastException
 
 6. (create-ellipse “20” 30 :purple)
 
-    => Throws ClassCastException
+        => Throws ClassCastException
 
 7. (create-ellipse 30 20 :cat)
 
-    => RuntimeException, “The keyword :cat is not a valid color” printed out
+        => RuntimeException, “The keyword :cat is not a valid color” printed out
 
 8. (create-ellipse 40 50 “bear”)
 
-    => RuntimeException, “Unable to resolve symbol: bear in this context” not printed out
+        => RuntimeException, “Unable to resolve symbol: bear in this context” not printed out
 
 9. (create-ellipse 100 90)
 
@@ -43,22 +43,105 @@
 
 10. (create-ellipse 20 :red)
 
-	=> Throws ClassCastException
+	    => Throws ClassCastException
 
 11. (create-ellipse 20)
 
-	=> Throws NullPointerException
+	    => Throws NullPointerException
 
 12. (create-ellipse :blue)
 
-    => Throws NullPointerException
+        => Throws NullPointerException
 
 13. (above (create-ellipse 20 30 :red) (create-ellipse 100 10 :blue))
 
     ![](examplePictures/aboveArcRedBlue.PNG)
 
 
-**(create-arc) is wonky and hopefully I'll have it fixed soon**
+**(create-arc)**
+
+1. (create-arc 100 100 0 45 :orange)
+   
+   ![](examplePictures/arcOrange.PNG)
+   
+2.  (create-arc 100 100 90 180 :red)
+   	
+   ![](examplePictures/arcRed.PNG)
+   
+3.    (create-arc 30 100 0 180 :yellow)
+   	
+   ![](examplePictures/arcYellow.PNG)
+   
+4.   (create-arc 100 30 0 180 :green)
+ 	
+   ![](examplePictures/arcGreen.PNG)
+  
+5. (create-arc 100 100 0 -180 :blue)
+ 	
+   ![](examplePictures/arcBlue.PNG)
+     
+6.  (create-arc 100 100 -90 90 :purple)
+    	
+   ![](examplePictures/arcPurple.PNG)
+  
+7. (create-arc 100 100 90 -90 :purple)
+       	
+   ![](examplePictures/arcPurple.PNG)
+  
+8. (create-arc 100 100 90 270 :purple)
+       	
+   ![](examplePictures/arcPurple2.PNG)
+  
+9.   (create-arc 100 100 0 361)
+    	
+   ![](examplePictures/arcBlank.PNG)
+  
+10.   (create-arc 100 100 0 75 [0 0 128])
+   	
+   	=> ClassCastException
+   
+11.   (Create-arc 100 100 0 75 :cat)
+   	
+   	=> RuntimeException, “The keyword :cat is not a valid color”
+   
+**((In the following examples x, y, z, and w represent numbers))**
+   
+12.   (create-arc x :color)
+   	
+   	=> NullPointerException
+   
+13.   (create-arc x y :color)
+   
+    => NullPointerException 
+   
+14.   (create-arc x y z :color)
+   	
+   	=> ClassCastException
+   
+15.   (create-arc x y z ‘w’ :color)
+   
+    => Works as normal
+   
+16.   (create-arc ‘x’ y z w :color)
+   
+    => Works as normal
+   
+17.   (create-arc “x” y z w :color)
+   
+    => ClassCastException
+   
+18.   (create-arc x y “z” w :color)
+   
+    => ClassCastException
+   
+19.   (create-arc x y :color z w)
+   
+    => ClassCastException
+   
+20.   (create-arc :color x y z w)
+   
+    =>ClassCastException
+
 
 
 **(create-line)**
@@ -95,7 +178,7 @@
 
 4. (create-triangle 0 0 0 0 :orange)
 
-	=>Blank image shows up
+	    =>Blank image shows up
 
 5. (create-triangle 10 50 10 50 :orange)
 
