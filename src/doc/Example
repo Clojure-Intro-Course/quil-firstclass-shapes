@@ -338,15 +338,15 @@ As best as I can figure, if given a file path it must be the **entire** file pat
 
 The shape can be drawn off screen, if the canvas does not contain the (x,y) coordinate. Coordinates are measured from the top left corner, with a positive x moving right and a positive y moving down.
 
-1. (ds (create-rect 83 40 0 0 255) 300 300)
+1. (ds (create-rect 83 40 0 0 255) 300 300) (drawn on a 600x600 area)
 
     ![](examplePictures/dsBlue1.PNG)
     
-2. (ds (create-rect 83 40 0 0 255) 150 450)
+2. (ds (create-rect 83 40 0 0 255) 150 450) (drawn on a 600x600 area)
 
     ![](examplePictures/dsBlue2.PNG)
     
-3. (ds (create-rect 83 40 0 0 255) 150 100)
+3. (ds (create-rect 83 40 0 0 255) 150 100) (drawn on a 600x600 area)
 
     ![](examplePictures/dsBlue3.PNG)
     
