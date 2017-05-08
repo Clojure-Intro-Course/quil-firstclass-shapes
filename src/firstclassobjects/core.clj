@@ -1,6 +1,8 @@
 (ns firstclassobjects.core
   (:use [quil.core]
-        [inflections.core]))
+        [inflections.core])
+   (:require [clojure.spec :as s]
+              [clojure.spec.test :as stest]))
 
 
 (def colors {:red [255 0 0] :blue [0 0 255] :yellow [255 255 0]
