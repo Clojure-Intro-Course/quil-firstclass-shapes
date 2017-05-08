@@ -2,184 +2,355 @@
 
 **(create-ellipse)**
 
-![Image of arc](examplePictures/arcBlue.PNG)
+*Takes 2 numbers, 2 numbers and a color keyword, 3 numbers, or 5 numbers. The first 2 numbers should be  ≥ 0 to stop issues with other methods, and any following numbers must be integers between 0 and 255 inclusive.*
 
 
-1. (create-ellipse 20 40 :red)
+
+1. (create-ellipse 100 90)
+   
+      ![](examplePictures/ellipseEmpty.PNG) 
+      
+2. (create-ellipse 20 40 :red)
 
    ![](examplePictures/ellipseRed.PNG)
+   
+3. (create-ellipse 100 50 128)
 
-2. (create-ellipse 60 40 :green)
+    ![](examplePictures/ellipseGray.PNG)
+    
+4. (create-ellipse 100 50 150 0 230)
+
+    ![](examplePictures/ellipseLilac.PNG)
+
+5. (create-ellipse 60 40 :green)
 
    ![](examplePictures/ellipseGreen.PNG)
 
-3. (create-ellipse 0 30 :black)
+6. (create-ellipse 0 30 :black)
 
    ![](examplePictures/ellipseBlack.PNG)
 
-4. (create-ellipse -40 30 :yellow)
+7. (create-ellipse -40 30 :yellow)
 
    ![](examplePictures/ellipseYellow.PNG)
 
-5. (create-ellipse :blue 20 90)
+8. (create-ellipse :blue 20 90)
 
-        => Throws ClassCastException
+        => ClassCastException
 
-6. (create-ellipse “20” 30 :purple)
+9. (create-ellipse “20” 30 :purple)
 
-        => Throws ClassCastException
+        => ClassCastException
 
-7. (create-ellipse 30 20 :cat)
+10. (create-ellipse 30 20 :cat)
 
         => RuntimeException, “The keyword :cat is not a valid color” printed out
 
-8. (create-ellipse 40 50 “bear”)
+11. (create-ellipse 40 50 “bear”)
 
         => RuntimeException, “Unable to resolve symbol: bear in this context” not printed out
 
-9. (create-ellipse 100 90)
 
-   ![](examplePictures/ellipseEmpty.PNG)
+12. (create-ellipse 20 :red)
 
-10. (create-ellipse 20 :red)
+	    => ClassCastException
 
-	    => Throws ClassCastException
+13. (create-ellipse 20)
 
-11. (create-ellipse 20)
+	    => NullPointerException
 
-	    => Throws NullPointerException
+14. (create-ellipse :blue)
 
-12. (create-ellipse :blue)
+        => NullPointerException
 
-        => Throws NullPointerException
-
-13. (above (create-ellipse 20 30 :red) (create-ellipse 100 10 :blue))
+15. (above (create-ellipse 20 30 :red) (create-ellipse 100 10 :blue))
 
     ![](examplePictures/aboveArcRedBlue.PNG)
 
 
-**(create-arc)**
+**(create-degree-arc)**
 
-1. (create-arc 100 100 0 45 :orange)
+*Takes 4 numbers, 4 numbers and a color keyword, 5 numbers, or 7 numbers. The first 2 numbers must be  ≥ 0, the next 2 can be any ration number, and any following numbers must be integers between 0 and 255 inclusive.*
+
+1. (create-degree-arc 100 100 0 45 :orange)
    
    ![](examplePictures/arcOrange.PNG)
    
-2.  (create-arc 100 100 90 180 :red)
+2. (create-arc  100 100 0 90 0 255 0)
+
+    ![](examplePictures/arcLime.PNG)
+   
+3. (create-degree-arc 100 50 0 230 150)
+
+    ![](examplePictures/arcGray)
+   
+4.  (create-degree-arc 100 100 90 180 :red)
    	
    ![](examplePictures/arcRed.PNG)
    
-3.    (create-arc 30 100 0 180 :yellow)
+5.    (create-degree-arc 30 100 0 180 :yellow)
    	
    ![](examplePictures/arcYellow.PNG)
    
-4.   (create-arc 100 30 0 180 :green)
- 	
+6.   (create-degree-arc 100 30 0 180 :green)
+	
    ![](examplePictures/arcGreen.PNG)
   
-5. (create-arc 100 100 0 -180 :blue)
+7. (create-degree-arc 100 100 0 -180 :blue)
  	
    ![](examplePictures/arcBlue.PNG)
      
-6.  (create-arc 100 100 -90 90 :purple)
+8.  (create-degree-arc 100 100 -90 90 :purple)
     	
    ![](examplePictures/arcPurple.PNG)
   
-7. (create-arc 100 100 90 -90 :purple)
+9. (create-degree-arc 100 100 90 -90 :purple)
        	
    ![](examplePictures/arcPurple.PNG)
   
-8. (create-arc 100 100 90 270 :purple)
+10. (create-degree-arc 100 100 90 270 :purple)
        	
    ![](examplePictures/arcPurple2.PNG)
   
-9.   (create-arc 100 100 0 361)
+11.   (create-degree-arc 100 100 0 361)
     	
    ![](examplePictures/arcBlank.PNG)
   
-10.   (create-arc 100 100 0 75 [0 0 128])
+12.   (create-degree-arc 100 100 0 75 [0 0 128])
    	
    	=> ClassCastException
    
-11.   (Create-arc 100 100 0 75 :cat)
+13.   (create-degree-arc 100 100 0 75 :cat)
    	
    	=> RuntimeException, “The keyword :cat is not a valid color”
    
-**((In the following examples x, y, z, and w represent numbers))**
+    **((In the following examples x, y, z, and w represent numbers))**
    
-12.   (create-arc x :color)
+14.   (create-degree-arc x :color)
    	
    	=> NullPointerException
    
-13.   (create-arc x y :color)
+15.   (create-degree-arc x y :color)
    
-    => NullPointerException 
+   	=> NullPointerException 
    
-14.   (create-arc x y z :color)
+16.   (create-degree-arc x y z :color)
    	
    	=> ClassCastException
    
-15.   (create-arc x y z ‘w’ :color)
+17.   (create-degree-arc x y z ‘w’ :color)
    
-    => Works as normal
+   	=> Works as normal
    
-16.   (create-arc ‘x’ y z w :color)
+18.   (create-degree-arc ‘x’ y z w :color)
    
-    => Works as normal
+   	=> Works as normal
    
-17.   (create-arc “x” y z w :color)
+19.   (create-degree-arc “x” y z w :color)
    
-    => ClassCastException
+   	=> ClassCastException
    
-18.   (create-arc x y “z” w :color)
+20.   (create-degree-arc x y “z” w :color)
    
-    => ClassCastException
+   	=> ClassCastException
    
-19.   (create-arc x y :color z w)
+21.   (create-degree-arc x y :color z w)
    
-    => ClassCastException
+   	=> ClassCastException
    
-20.   (create-arc :color x y z w)
+22.   (create-degree-arc :color x y z w)
    
-    =>ClassCastException
+   	=> ClassCastException
+
+
+**(create-radian-arc)**
+
+Acts similarly to create-degree-arc, but takes the start and stop angles in radians instead of degrees.
 
 
 
 **(create-line)**
 
-1. (create-line 120 120 10 :green) \[same as (create-line -120 -120 10 :green), essentially\]
+*Takes 3 numbers and a color keyword, 4 numbers, or 6 numbers. The first 2 numbers can be any rational number, the third must be positive, and any following numbers must be integers between 0 and 255 inclusive.*
+
+Because of the rounded ends, above, beside, etc will overlap slightly. When scaled, the width of the line stays the same. Coordinates are measured from the top left corner, with a positive x moving right and a positive y moving down.
+
+1. (create-line 120 120 10 :green) (same as (create-line  -120  -120 10 :green), essentially)
 
    ![](examplePictures/lineGreen.PNG)
+   
+2. (create-line 10 50 10 150)
 
-2. (create-line 30 100 100 :orange)
+    ![](examplePictures/lineGray.PNG)
+    
+3. (create-line 10 50 5 150 210 10)
+
+    ![](examplePictures/lineAvocado.PNG)
+
+4. (create-line 30 100 100 :orange)
 
    ![](examplePictures/lineOrange.PNG)
 
-3. (create-line -110 100 20 :yellow)
+5. (create-line -110 100 20 :yellow)
 
    ![](examplePictures/lineYellow.PNG)
 
-4. (create-line -100 -100 0 :blue)
+6. (create-line -100 -100 0 :blue)
 
    ![](examplePictures/lineBlue.PNG)
 
+7. (create-line 100 100 -10 :blue)
+    
+        => IllegalArgumentException, “negative width”
+    
+8. (create-line 100 100 10 :cats)
+    
+        => RuntimeException, “the keyword :cats is not a valid color”
+        
+9. (create-line 100 100 :purple 10)
+
+   	=> ClassCastException
+
+10. (create-line 100 :purple 100 10)
+
+    	=> ClassCastException
+
+11. (create-line :purple 100 100 10)
+
+    	=> ClassCastException
+
+12. (create-line 100 100 10)
+
+        => NullPointerException
+
+13. (create-line 100 100 :purple)
+
+    	=> ClassCastException
+
+14. (create-line 100 100 “f” :purple)
+
+    	=> ClassCastException
+
+15. (create-line 100 100 f :purple)
+
+    	=> ClassCastException and RuntimeException
+
 **(create-triangle)**
+
+*Takes 4 numbers, 4 numbers and a color keyword, 5 numbers, or 7 numbers. The first 4 numbers can be any rational number, while any following numbers must be integers between 0 and 255 inclusive.*
+
+ Coordinates are measured from the top left corner, with a positive x moving right and a positive y moving down.
 
 1. (create-triangle 100 100 50 0 :purple)
 
    ![](examplePictures/trianglePurple.PNG)
+   
+2. (create-triangle 10 50 150 140 249)
 
-2. (create-triangle 100 100 0 0 :black)
+    ![](examplePictures/triangleGray.PNG)
+    
+3. (create-triangle 40 40 30 60 125 32 116) 
+
+    ![](examplePictures/triangleRoyal.PNG)
+
+4. (create-triangle 100 100 0 0 :black)
 
    ![](examplePictures/triangleBlack.PNG)
 
-3. (create-triangle 100 100 -100 0 :red)
+5. (create-triangle 100 100 -100 0 :red)
 
    ![](examplePictures/triangleRed.PNG)
 
-4. (create-triangle 0 0 0 0 :orange)
+6. (create-triangle 0 0 0 0 :orange)
 
 	    =>Blank image shows up
 
-5. (create-triangle 10 50 10 50 :orange)
+7. (create-triangle 10 50 10 50 :orange)
 
    ![](examplePictures/triangleOrange.PNG)
+
+
+**(create-quad)**
+
+*Takes 6 numbers, 6 numbers and a color keyword, 7 numbers, or 9 numbers. The first 6 numbers can be any rational number, while any subsequent numbers must be integers between 0 and 255 inclusive.*
+
+If two points are the same, a triangle will be drawn. The points will be conected in order, regardless if this makes the shape self-intersecting. Coordinates are measured from the top left corner, with a positive x moving right and a positive y moving down.
+
+1. (create-quad 40 0 55 30 15 30)
+
+    ![](examplePictures/quadBlank.PNG)
+
+2. (create-quad 40 0 55 40 15 40 100) 
+
+    ![](examplePictures/quadGray100.PNG)
+    
+3. (create-quad 0 0 5 30 15 30 :blue)
+
+    ![](examplePictures/quadBlue.PNG)
+4. (create-quad 10 0 5 30 15 30 253 148 96)
+
+    ![](examplePictures/quadPeach.PNG)
+
+5. (create-quad -20 -30 5 30 15 30 :pink) 
+
+    ![](examplePictures/quadPink.PNG)
+    
+6. (create-quad -20 -30 5 30 15 -10 :green)
+
+    ![](examplePictures/quadGreen.PNG)
+    
+**(create-picture)**
+
+*Takes a string, either the url or file path*
+
+As best as I can figure, if given a file path it must be the **entire** file path, from C:
+
+1. (create-picture "http://i.onionstatic.com/onion/8446/original/800.jpg")
+
+    ![](examplePictures/pic.jpg)
+    
+2. (create-picture "/Users/courtney/Downloads/leinthing/src/leinthing/violence.png")
+
+    ![](examplePictures/violence.png)
+    
+**(create-rect)**
+
+*Takes 2 numbers and a color keyword, 3 numbers, or 5 numbers. The first 2 numbers can be any rational number,(though they ought to be only positive), while any subsequent numbers must be integers between 0 and 255 inclusive.*
+
+ Coordinates are measured from the top left corner, with a positive x moving right and a positive y moving down.
+
+1. (create-rect 10 40 :red)
+
+    ![](examplePictures/rectRed.PNG)
+    
+2. (create-rect 20 50 120)
+
+    ![](examplePictures/rectGray.PNG)
+    
+3. (create-rect 70 40 255 10 255)
+
+    ![](examplePictures/rectPurple.PNG)
+    
+    
+**(ds)**
+
+*Takes a shape and 2 rational numbers.*
+
+The shape can be drawn off screen, if the canvas does not contain the (x,y) coordinate. Coordinates are measured from the top left corner, with a positive x moving right and a positive y moving down.
+
+1. (ds (create-rect 83 40 0 0 255) 300 300)
+
+    ![](examplePictures/dsBlue1.PNG)
+    
+2. (ds (create-rect 83 40 0 0 255) 150 450)
+
+    ![](examplePictures/dsBlue2.PNG)
+    
+3. (ds (create-rect 83 40 0 0 255) 150 100)
+
+    ![](examplePictures/dsBlue3.PNG)
+    
+4. (ds (create-rect 83 40 0 0 255) 600 0) (drawn on a 600x600 area)
+
+    ![](examplePictures/dsBlue4.PNG)
+    
